@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genética y Medicina | Biotecnología</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #243247;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4c1d95, #7c3aed, #2563eb);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background: #172554;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 14px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #7c3aed;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1150px;
+            margin: 30px auto;
+        }
+
+        .introduccion {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px #00000012;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            color: #6d28d9;
+            margin-bottom: 12px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+            margin: 25px 0;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px #00000012;
+            transition: transform 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .contenido {
+            padding: 20px;
+        }
+
+        .contenido h3 {
+            color: #5b21b6;
+            margin-bottom: 10px;
+        }
+
+        .destacado {
+            background: #ede9fe;
+            border-left: 6px solid #7c3aed;
+            padding: 22px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .lista {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            margin: 25px 0;
+            box-shadow: 0 5px 18px #00000012;
+        }
+
+        .lista li {
+            margin: 10px 0 10px 25px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #6d28d9;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #4c1d95;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .banner {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🧬 Genética y Medicina</h1>
+        <p>Cómo el estudio del ADN está transformando la salud humana</p>
+    </header>
+
+    <nav>
+        <a href="biotecnologia.html">🏠 Inicio</a>
+        <a href="inteligencia-artificial.html">Inteligencia artificial</a>
+        <a href="genetica.html">Genética</a>
+        <a href="vacunas.html">Vacunas</a>
+        <a href="descubrimientos.html">Descubrimientos</a>
+    </nav>
+
+    <main class="contenedor">
+
+        <img
+            class="banner"
+            src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=85"
+            alt="Investigación científica en un laboratorio"
+        >
+
+        <section class="introduccion">
+            <h2>¿Qué es la genética médica?</h2>
+            <p>
+                La genética médica es una rama de la medicina que estudia cómo
+                los genes y las variaciones del ADN pueden influir en la salud
+                de las personas. Gracias a sus avances, los profesionales de la
+                salud pueden investigar determinadas enfermedades hereditarias,
+                identificar riesgos y estudiar tratamientos adaptados a cada caso.
+            </p>
+            <p>
+                Esta área se relaciona con la biotecnología porque utiliza
+                conocimientos y herramientas biológicas para comprender mejor
+                el funcionamiento del organismo y desarrollar nuevas soluciones
+                médicas.
+            </p>
+        </section>
+
+        <h2>Principales avances de la genética</h2>
+
+        <section class="rejilla">
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80"
+                    alt="Investigación científica"
+                >
+                <div class="contenido">
+                    <h3>1. Secuenciación del ADN</h3>
+                    <p>
+                        Permite determinar el orden de las unidades que forman
+                        el ADN. Esta información ayuda a estudiar variantes
+                        genéticas relacionadas con algunas enfermedades y a
+                        orientar determinadas decisiones médicas.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80"
+                    alt="Trabajo de laboratorio"
+                >
+                <div class="contenido">
+                    <h3>2. Edición genética</h3>
+                    <p>
+                        Técnicas como CRISPR permiten realizar cambios
+                        específicos en el ADN bajo condiciones controladas.
+                        Se investigan para tratar ciertas enfermedades, aunque
+                        tienen limitaciones y riesgos que deben evaluarse.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=80"
+                    alt="Equipos científicos en un laboratorio"
+                >
+                <div class="contenido">
+                    <h3>3. Terapia génica</h3>
+                    <p>
+                        Busca tratar algunas enfermedades mediante la
+                        incorporación, modificación o regulación de material
+                        genético en las células. Existen tratamientos aprobados
+                        para enfermedades concretas, mientras otros siguen
+                        en investigación.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="destacado">
+            <h2>🔬 Un avance importante: CRISPR</h2>
+            <p>
+                CRISPR es una herramienta de edición genética que permite
+                modificar regiones determinadas del ADN. Ha impulsado la
+                investigación biomédica y el desarrollo de terapias para
+                enfermedades específicas. Sin embargo, no es una solución
+                universal: su uso requiere controles de seguridad, evaluación
+                científica y supervisión médica.
+            </p>
+        </section>
+
+        <section class="lista">
+            <h2>¿Cómo ayuda la genética a la medicina?</h2>
+            <ul>
+                <li>Contribuye al diagnóstico de algunas enfermedades hereditarias.</li>
+                <li>Ayuda a identificar determinadas variantes genéticas.</li>
+                <li>Permite estudiar tratamientos dirigidos a alteraciones específicas.</li>
+                <li>Apoya la investigación de enfermedades poco frecuentes.</li>
+                <li>Facilita el desarrollo de nuevas estrategias de prevención y tratamiento.</li>
+            </ul>
+        </section>
+
+        <section class="introduccion">
+            <h2>Beneficios y desafíos</h2>
+            <p>
+                Entre sus beneficios se encuentran la posibilidad de mejorar
+                ciertos diagnósticos, comprender mejor las enfermedades y
+                desarrollar tratamientos especializados. No obstante, también
+                existen desafíos: los tratamientos pueden ser costosos, no
+                funcionan para todos los pacientes y la información genética
+                debe protegerse para evitar usos indebidos o discriminación.
+            </p>
+        </section>
+
+        <section class="introduccion">
+            <h2>Conclusión</h2>
+            <p>
+                La genética médica es una de las áreas más importantes de la
+                biotecnología moderna. Sus avances permiten comprender mejor
+                la relación entre el ADN y la salud, y abren nuevas posibilidades
+                para diagnosticar y tratar algunas enfermedades. Su aplicación
+                responsable puede contribuir a una medicina más precisa y segura.
+            </p>
+
+            <a href="biotecnologia.html" class="boton">← Volver a la página principal</a>
+            <a href="vacunas.html" class="boton">Siguiente tema: Vacunas →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Biotecnología y Avances Médicos | Proyecto educativo</p>
+        <p>Innovaciones tecnológicas aplicadas a la medicina</p>
+    </footer>
+
+</body>
+</html>
+```

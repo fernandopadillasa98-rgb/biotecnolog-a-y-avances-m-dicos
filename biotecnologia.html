@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioMed | Innovación Médica</title>
+
+<style>
+:root {
+    --navy: #102b46;
+    --blue: #17647a;
+    --cyan: #18c5b5;
+    --light: #f1f6fb;
+    --white: #ffffff;
+    --text: #26394d;
+    --muted: #66788a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+header {
+    background: var(--navy);
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 75px 8%;
+    color: white;
+    background:
+        linear-gradient(100deg, #102b46f5, #102b4690),
+        url("https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.badge {
+    display: inline-block;
+    background: #18c5b522;
+    border: 1px solid var(--cyan);
+    color: #8dfff3;
+    border-radius: 30px;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    font-size: 17px;
+    max-width: 650px;
+    color: #e1edf5;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    background: var(--cyan);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #0002;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    margin-left: 8px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background: white;
+    padding: 30px 7%;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.stat {
+    text-align: center;
+    border-right: 1px solid #e0e8ef;
+}
+
+.stat:last-child {
+    border: none;
+}
+
+.stat strong {
+    display: block;
+    font-size: 29px;
+    color: var(--blue);
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 85px;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+}
+
+.section-title small {
+    color: #07988d;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    color: var(--navy);
+    font-size: clamp(28px, 4vw, 39px);
+    line-height: 1.25;
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+.search-box {
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 1px solid #d7e2ec;
+    border-radius: 12px;
+    outline: none;
+    background: white;
+}
+
+.search-box input:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px #18c5b522;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter {
+    padding: 9px 17px;
+    border: 1px solid #d5e1eb;
+    border-radius: 30px;
+    background: white;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.filter.active,
+.filter:hover {
+    background: var(--navy);
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e6edf3;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 7px 25px #102b460a;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px #102b4618;
+}
+
+.card img {
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+    background: #dce8ef;
+}
+
+.card-content {
+    padding: 23px;
+}
+
+.tag {
+    display: inline-block;
+    background: #dff8f3;
+    color: #08796e;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: var(--navy);
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.more {
+    display: inline-block;
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: #087f88;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.more:hover {
+    text-decoration: underline;
+}
+
+.empty {
+    display: none;
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    grid-column: 1 / -1;
+}
+
+.dark {
+    background: var(--navy);
+    color: white;
+}
+
+.dark .section-title h2 {
+    color: white;
+}
+
+.dark .section-title p {
+    color: #c6d7e5;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.columns img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.columns h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 12px 0 20px;
+}
+
+.columns p {
+    color: #d1e0eb;
+    margin-bottom: 15px;
+}
+
+.info-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.info-list li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #ffffff0c;
+    border-left: 3px solid var(--cyan);
+    border-radius: 5px;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    border-left: 3px solid var(--cyan);
+    padding-left: 28px;
+}
+
+.event {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 23px;
+    margin-bottom: 22px;
+    box-shadow: 0 5px 20px #102b460a;
+}
+
+.event::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 25px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cyan);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--cyan);
+}
+
+.event time {
+    font-weight: bold;
+    color: #078c81;
+    font-size: 13px;
+}
+
+.event h3 {
+    color: var(--navy);
+    margin: 5px 0;
+}
+
+.event p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.applications {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.application {
+    background: white;
+    padding: 25px 18px;
+    text-align: center;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--cyan);
+    box-shadow: 0 5px 20px #102b460a;
+}
+
+.application .icon {
+    font-size: 36px;
+}
+
+.application h3 {
+    color: var(--navy);
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.application p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.conclusion {
+    background: linear-gradient(120deg, #12304c, #17647a);
+    padding: 45px;
+    text-align: center;
+    color: white;
+    border-radius: 18px;
+}
+
+.conclusion h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.conclusion p {
+    max-width: 850px;
+    margin: auto;
+    color: #e1edf5;
+}
+
+.sources {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.source {
+    background: white;
+    padding: 20px;
+    border: 1px solid #e1eaf1;
+    border-radius: 10px;
+}
+
+.source h3 {
+    color: var(--navy);
+    font-size: 17px;
+}
+
+.source p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.source a {
+    color: #078b81;
+    font-weight: bold;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    background: #091d30;
+    color: #c4d2df;
+    text-align: center;
+    padding: 35px 7%;
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--cyan);
+}
+
+#top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: var(--cyan);
+    color: var(--navy);
+    text-decoration: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px #0002;
+}
+
+#modal {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: #07192bdc;
+    padding: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.modal-box h2 {
+    color: var(--navy);
+    margin: 15px 0;
+}
+
+.modal-box p {
+    color: var(--muted);
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+@media(max-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .applications {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .columns {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 65px 7%;
+    }
+
+    .grid,
+    .applications,
+    .sources {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .conclusion {
+        padding: 30px 20px;
+    }
+
+    .btn-outline {
+        margin: 12px 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="inicio">
+    <div class="logo">Bio<span>Med</span> 🧬</div>
+
+    <nav>
+<a href="biotecnologia.html">Inicio</a> 
+<a href="inteligencia-artificial.html">Inteligencia Artificial</a> 
+<a href="genetica.html">Genética</a>
+<a href="vacunas.html">Vacunas</a> 
+<a href="descubrimientos.html">Descubrimientos</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="badge">CIENCIA · SALUD · TECNOLOGÍA</span>
+
+        <h1>Biotecnología y <span>Avances Médicos</span></h1>
+
+        <p>
+            Descubrí cómo la inteligencia artificial, la genética,
+            las vacunas modernas y la tecnología médica están
+            transformando la investigación y la atención sanitaria.
+        </p>
+
+        <a href="#innovaciones" class="btn">Explorar avances ↗</a>
+        <a href="#descubrimientos" class="btn btn-outline">Línea de tiempo</a>
+    </div>
+</section>
+
+<div class="stats">
+    <div class="stat">
+        <strong>IA</strong>
+        <span>Inteligencia artificial</span>
+    </div>
+    <div class="stat">
+        <strong>ADN</strong>
+        <span>Investigación genética</span>
+    </div>
+    <div class="stat">
+        <strong>ARNm</strong>
+        <span>Tecnología de vacunas</span>
+    </div>
+    <div class="stat">
+        <strong>3D</strong>
+        <span>Innovación médica</span>
+    </div>
+</div>
+
+<section id="innovaciones">
+    <div class="section-title">
+        <small>Explorá la ciencia</small>
+        <h2>Innovaciones tecnológicas aplicadas a la medicina</h2>
+        <p>
+            Buscá información por tema o utilizá los filtros
+            para explorar las principales innovaciones médicas.
+        </p>
+    </div>
+
+    <div class="search-box">
+        <input type="search" id="search"
+        placeholder="🔎 Buscar inteligencia artificial, genética, vacunas...">
+    </div>
+
+    <div class="filters">
+        <button class="filter active" data-category="todos">Todos</button>
+        <button class="filter" data-category="ia">Inteligencia artificial</button>
+        <button class="filter" data-category="genetica">Genética</button>
+        <button class="filter" data-category="tratamientos">Tratamientos</button>
+        <button class="filter" data-category="tecnologia">Tecnología médica</button>
+    </div>
+
+    <div class="grid" id="card-grid">
+
+        <article class="card" data-category="ia">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+            alt="Profesionales trabajando con tecnología médica">
+            <div class="card-content">
+                <span class="tag">INTELIGENCIA ARTIFICIAL</span>
+                <h3>Inteligencia artificial médica</h3>
+                <p>
+                    Los sistemas de IA pueden ayudar a analizar imágenes,
+                    reconocer patrones y apoyar la detección de posibles
+                    enfermedades.
+                </p>
+                <button class="more" data-title="Inteligencia artificial médica"
+                data-info="La IA puede analizar radiografías y otras imágenes médicas, estudiar datos y reconocer patrones. Sirve como herramienta de apoyo, pero sus resultados deben ser evaluados por profesionales porque puede cometer errores.">
+                    Leer más →
+                </button>
+            </div>
+        </article>
+
+        <article class="card" data-category="genetica">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80"
+            alt="Investigación científica en laboratorio">
+            <div class="card-content">
+                <span class="tag">GENÉTICA</span>
+                <h3>Edición genética CRISPR</h3>
+                <p>
+                    Herramienta que permite modificar regiones específicas
+                    del ADN para investigar enfermedades y desarrollar
+                    determinadas terapias.
+                </p>
+                <button class="more" data-title="Edición genética CRISPR"
+                data-info="CRISPR permite realizar cambios dirigidos en el ADN. Algunas terapias basadas en esta tecnología ya han sido autorizadas para enfermedades específicas. No todas las enfermedades pueden tratarse de esta manera y su aplicación requiere controles rigurosos.">
+                    Leer más →
+                </button>
+            </div>
+        </article>
+
+        <article class="card" data-category="tratamientos">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80"
+            alt="Investigación biomédica">
+            <div class="card-content">
+                <span class="tag">BIOTECNOLOGÍA</span>
+                <h3>Vacunas de ARN mensajero</h3>
+                <p>
+                    Utilizan instrucciones temporales para que las células
+                    produzcan una proteína capaz de activar una respuesta
+                    inmunitaria.
+                </p>
+                <button class="more" data-title="Vacunas de ARN mensajero"
+                data-info="El ARN mensajero contiene instrucciones que las células utilizan temporalmente para producir una proteína. Algunas vacunas aprovechan este proceso para preparar al sistema inmunitario. También se investigan nuevas aplicaciones terapéuticas, cuya eficacia depende de los resultados científicos.">
+                    Leer más →
+                </button>
+            </div>
+        </article>
+
+        <article class="card" data-category="tratamientos">
+            <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c3b2f1?auto=format&fit=crop&w=800&q=80"
+            alt="Equipos utilizados en investigación científica">
+            <div class="card-content">
+                <span class="tag">TRATAMIENTOS</span>
+                <h3>Medicina personalizada</h3>
+                <p>
+                    Estudia características clínicas y genéticas para
+                    orientar la elección de algunos tratamientos
+                    según cada paciente.
+                </p>
+                <button class="more" data-title="Medicina personalizada"
+                data-info="La medicina personalizada considera las características de cada persona. La farmacogenómica estudia cómo ciertas variantes genéticas pueden influir en la respuesta a determinados medicamentos. Esta información ayuda a orie
+```

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inteligencia Artificial en Medicina | BioMed</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f6fb;
+    color: #26394d;
+    line-height: 1.8;
+}
+
+header {
+    background: #102b46;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #18c5b5;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #18c5b5;
+}
+
+.hero {
+    padding: 90px 8%;
+    color: white;
+    background:
+        linear-gradient(100deg, #102b46ed, #102b4680),
+        url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+}
+
+.hero h1 {
+    max-width: 850px;
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #18c5b5;
+}
+
+.hero p {
+    max-width: 750px;
+    font-size: 17px;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    padding: 55px 25px;
+}
+
+h2 {
+    color: #102b46;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px #102b4610;
+    border: 1px solid #e1eaf1;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.tarjeta div {
+    padding: 23px;
+}
+
+.tarjeta h3 {
+    color: #17647a;
+    margin-bottom: 10px;
+}
+
+.caja {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-left: 5px solid #18c5b5;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.lista {
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+.lista li {
+    margin-bottom: 10px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #18c5b5;
+    color: #102b46;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background: #10a99c;
+}
+
+footer {
+    background: #091d30;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer span {
+    color: #18c5b5;
+}
+
+@media(max-width: 650px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 60px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Bio<span>Med</span> 🧬</div>
+
+    <nav>
+        <a href="biotecnologia.html">Inicio</a>
+        <a href="genetica.html">Genética</a>
+        <a href="vacunas.html">Vacunas</a>
+        <a href="descubrimientos.html">Descubrimientos</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Inteligencia Artificial aplicada a la <span>Medicina</span></h1>
+
+    <p>
+        Descubrí cómo los sistemas inteligentes ayudan a analizar
+        información clínica, estudiar enfermedades y apoyar la
+        investigación de nuevos tratamientos.
+    </p>
+</section>
+
+<main class="contenedor">
+
+    <section>
+        <h2>¿Qué es la inteligencia artificial médica?</h2>
+
+        <p>
+            La inteligencia artificial médica consiste en aplicar
+            sistemas informáticos capaces de analizar datos, reconocer
+            patrones y realizar determinadas tareas que normalmente
+            requieren capacidades humanas. En el campo de la salud,
+            puede utilizarse como herramienta de apoyo para investigar
+            enfermedades, estudiar imágenes y organizar información clínica.
+        </p>
+
+        <p>
+            Estas herramientas no reemplazan automáticamente a los médicos.
+            Su utilidad depende de la calidad de los datos, de la validación
+            científica y de la supervisión de profesionales sanitarios.
+        </p>
+    </section>
+
+    <section>
+        <h2>Principales aplicaciones</h2>
+
+        <div class="grid">
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
+                    alt="Profesionales sanitarios utilizando tecnología"
+                >
+
+                <div>
+                    <h3>1. Diagnóstico por imágenes</h3>
+
+                    <p>
+                        Algunos sistemas analizan radiografías, mamografías
+                        y otras imágenes para identificar patrones que
+                        podrían requerir una evaluación médica.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=80"
+                    alt="Investigación científica en laboratorio"
+                >
+
+                <div>
+                    <h3>2. Investigación de medicamentos</h3>
+
+                    <p>
+                        Los modelos informáticos pueden estudiar moléculas
+                        y ayudar a seleccionar posibles candidatos para
+                        investigaciones farmacológicas.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80"
+                    alt="Laboratorio de investigación biomédica"
+                >
+
+                <div>
+                    <h3>3. Análisis de datos médicos</h3>
+
+                    <p>
+                        Los sistemas pueden organizar grandes cantidades
+                        de información para ayudar a estudiar tendencias
+                        y detectar posibles patrones clínicos.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img
+                    src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=80"
+                    alt="Equipo de investigación tecnológica"
+                >
+
+                <div>
+                    <h3>4. Planificación de tratamientos</h3>
+
+                    <p>
+                        Algunas herramientas ayudan a evaluar información
+                        relevante para que los profesionales consideren
+                        diferentes alternativas de atención.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Ventajas de esta tecnología</h2>
+
+        <div class="caja">
+            <ul class="lista">
+                <li>Puede agilizar determinadas tareas de análisis.</li>
+                <li>Ayuda a identificar patrones en grandes conjuntos de datos.</li>
+                <li>Apoya algunas investigaciones biomédicas.</li>
+                <li>Puede contribuir a mejorar determinados procesos clínicos.</li>
+                <li>Permite desarrollar nuevas herramientas para la investigación.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Desafíos y riesgos</h2>
+
+        <p>
+            La inteligencia artificial también presenta dificultades.
+            Un sistema puede producir resultados incorrectos, reflejar
+            sesgos de los datos con los que fue entrenado o poner en riesgo
+            la privacidad si la información sanitaria no se protege
+            adecuadamente.
+        </p>
+
+        <div class="caja">
+            <strong>Importante:</strong>
+            los resultados de un sistema de inteligencia artificial
+            deben interpretarse con cuidado y no sustituyen la evaluación
+            de un profesional de la salud.
+        </div>
+    </section>
+
+    <section>
+        <h2>Conclusión</h2>
+
+        <p>
+            La inteligencia artificial es una herramienta importante
+            para la evolución de la medicina. Puede ayudar a investigar
+            enfermedades, analizar información y apoyar ciertas decisiones
+            clínicas. Sin embargo, debe utilizarse responsablemente,
+            con evidencia científica, protección de datos y supervisión
+            profesional.
+        </p>
+    </section>
+
+    <section>
+        <h2>Fuentes para investigar</h2>
+
+        <ul class="lista">
+            <li>
+                <a href="https://www.who.int/es" target="_blank" rel="noopener">
+                    Organización Mundial de la Salud
+                </a>
+            </li>
+
+            <li>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">
+                    Base de datos científica PubMed
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.nih.gov/" target="_blank" rel="noopener">
+                    National Institutes of Health
+                </a>
+            </li>
+        </ul>
+
+        <a class="boton" href="biotecnologia.html">← Volver a la página principal</a>
+    </section>
+
+</main>
+
+<footer>
+    <p><span>BioMed</span> | Biotecnología y Avances Médicos</p>
+    <p>Innovaciones tecnológicas aplicadas a la medicina.</p>
+</footer>
+
+</body>
+</html>
+```
+
+
+
+
